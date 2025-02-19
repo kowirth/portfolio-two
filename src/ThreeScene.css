@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .scene-container {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  
+  #webgl {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(23, 23, 23, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 4px;
+    border-radius: 30px;
+    display: flex;
+    width: 200px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .toggle input {
+    display: none;
+  }
+  
+  .toggle label {
+    flex: 1;
+    text-align: center;
+    line-height: 32px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle label:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .toggle input:checked + label {
+    color: #fff;
+  }
+  
+  .slider {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    border-radius: 25px;
+    background: linear-gradient(45deg, #FF3366, #FF6B6B);
+    box-shadow: 0 2px 8px rgba(255, 51, 102, 0.3);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  input[id="shape2"]:checked ~ .slider {
+    transform: translateX(100%);
+  }
+  
